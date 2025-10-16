@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Playwrite+DE+Grund:wght@100..400&family=Rye&display=swap');
+
+.line::after{
+   transition: all 0.5s ease-in-out;
+   background: #000; 
+
+   width: 0;
+   position: absolute;
+   content: '';
+   bottom: -5px;
+   left: 0px;
+}
+.line:hover::after{
+   width: 100%;
+   height: 2px;
+}
+.f1{
+  font-family: "Amarante", serif;
+  font-weight: 600;
+  font-style: bold;
+}
+.f2{
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.f3{
+  font-family: "Boogaloo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.f4{
+  font-family: "Playwrite DE Grund", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
