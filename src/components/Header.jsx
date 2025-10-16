@@ -59,28 +59,28 @@ const Header = () => {
 
         <div className="flex items-center text-[14px] justify-around w-[35%] md:pl-[70px] md:pr-[70px] pl-[10px] pr-[10px] md:w-[45%]">
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/+919009090245"
             className="hover:text-green-500 md:text-[20px]"
             aria-label="WhatsApp"
           >
             <IoLogoWhatsapp />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/gloriouseducational1"
             className="hover:text-pink-500  md:text-[20px]"
             aria-label="Instagram"
           >
             <RiInstagramFill />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://maps.app.goo.gl/3hkr77T7hst62tDu5"
             className="hover:text-shadow-red-400  md:text-[23px]"
             aria-label="Map"
           >
             <MdLocationPin />
           </a>
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/Glorious-Educational-Academy-225348011584920/"
             className="hover:text-blue-700  md:text-[20px]"
             aria-label="Facebook"
           >
