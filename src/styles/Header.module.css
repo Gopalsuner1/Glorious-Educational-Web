@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Playwrite+DE+Grund:wght@100..400&family=Rye&display=swap');
 
+
 .line::after{
    transition: all 0.5s ease-in-out;
    background: #000; 
