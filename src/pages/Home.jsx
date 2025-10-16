@@ -11,7 +11,7 @@ const Home = () => {
         <main className='w-full  h-fit flex flex-col items-center gap-10'>
           <Poster/>
           <Card1 image={p3}/>
-          <Card1 image={p3}/>
+          {/* <Card1 image={p3}/> */}
           <Footer/>
         </main>
     </div>
