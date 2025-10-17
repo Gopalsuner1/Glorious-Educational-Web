@@ -5,33 +5,12 @@ import { MdLocationPin } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 import styles from "../styles/Header.module.css";
-import { useEffect, useState } from 'react';
 
 const Header = () => {
 
- const [isScrollingDown, setIsScrollingDown] = useState(true); // true = down, false = up
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY) {
-        setIsScrollingDown(false);
-      } else if (currentScrollY < lastScrollY) {
-        setIsScrollingDown(true);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
 
   return (
-    <div className={` h-[300px] w-full z-10 shadow-xl flex md:flex-row flex-col gap-4 pb-2.5 pt-2  `}>
+    <div className={`h-fit w-full z-10 shadow-xl md:items-center flex md:flex-row flex-col gap-4 pb-2.5 pt-2  `}>
       <div className="md:w-[40%] w-full  md:h-full h-[50%] flex justify-center items-center gap-5 md:justify-start md:pl-9">
           <img src={logo} className="w-9 md:w-9" alt="Glorious Academy logo" />
           <h1 className={`  text-black md:text-[18px] text-[20px] ${styles.f2}`}>
