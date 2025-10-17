@@ -27,7 +27,7 @@ const Footer = () => {
           <h1 className=" text-[15px]">+91 9977773630 | +91 9009090245</h1>
         </div>
       </div>
-      <div className=" h-[80%]  md:text-[11px] text-[14px]  md:w-1/2 w-full md:pt-6 pl-8 grid grid-cols-3 grid-rows-5 gap-4 text-nowrap text-justify">
+      <div className=" h-[80%]  md:text-[15px] text-[11px]  md:w-1/2 w-full md:pt-6 pl-8 grid grid-cols-3 grid-rows-5 gap-4 text-nowrap text-justify">
             <h1 className="font-bold md:text-2xl text-[13px] text-nowrap  col-start-1 row-start-1 ">QUICK LINKS</h1>
             <a className="col-start-1 row-start-2 w-fit font-semibold" href="">Our Journey</a>
             <a className="col-start-1  row-start-3 w-fit font-semibold" href="">Admission Process</a>
