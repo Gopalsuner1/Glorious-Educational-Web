@@ -4,6 +4,7 @@ import { RiInstagramFill } from "react-icons/ri";
 import { MdLocationPin } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 import styles from "../styles/Header.module.css";
 
 const Header = () => {
@@ -23,36 +24,36 @@ const Header = () => {
           className={` md:w-[50%] w-[65%] text-[11px]  flex items-center justify-around font-bold ${styles.f4}`}
         >
           <li className={`relative ${styles.line}`}>
-            <a href="/">Home</a>
+            <NavLink to='/'>Home</NavLink>
           </li>
           <li className={`relative ${styles.line}`}>
-            <a href="/about">About Us</a>
+            <NavLink to='about'>About Us</NavLink>
           </li>
           <li className={`relative ${styles.line}`}>
-            <a href="/contact">Contact Us</a>
+            <NavLink to='contact'>Contact Us</NavLink>
           </li>
           <li className={`relative ${styles.line}`}>
-            <a href="/help">Help</a>
+            <NavLink to='help'>Help</NavLink>
           </li>
         </ul>
 
         <div className="flex items-center text-[14px] justify-around w-[35%] md:pl-[70px] md:pr-[70px] pl-[10px] pr-[10px] md:w-[45%]">
           <a
-            href="https://wa.me/+919009090245"
+            href="https://wa.me/+919009090245" target="_blank"
             className="hover:text-green-500 md:text-[20px]"
             aria-label="WhatsApp"
           >
             <IoLogoWhatsapp />
           </a>
           <a
-            href="https://www.instagram.com/gloriouseducational1"
+            href="https://www.instagram.com/gloriouseducational1" target="_blank"
             className="hover:text-pink-500  md:text-[20px]"
             aria-label="Instagram"
           >
             <RiInstagramFill />
           </a>
           <a
-            href="https://maps.app.goo.gl/3hkr77T7hst62tDu5"
+            href="https://maps.app.goo.gl/3hkr77T7hst62tDu5" target="_blank"
             className="hover:text-shadow-red-400  md:text-[23px]"
             aria-label="Map"
           >
@@ -60,13 +61,13 @@ const Header = () => {
           </a>
           <a
             href="https://www.facebook.com/Glorious-Educational-Academy-225348011584920/"
-            className="hover:text-blue-700  md:text-[20px]"
+            className="hover:text-blue-700  md:text-[20px]" target="_blank"
             aria-label="Facebook"
           >
             <FaFacebook />
           </a>
           <a
-            href="https://www.youtube.com/@gloriouseducational"
+            href="https://www.youtube.com/@gloriouseducational" target="_blank"
             className="hover:text-red-700  md:text-[20px]"
             aria-label="YouTube"
           >

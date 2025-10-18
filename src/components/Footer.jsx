@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+
 import { FiPhoneCall } from "react-icons/fi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="w-full h-fit  gap-5 md:gap-0 md:pl-[90px] md:pr-[90px] pt-3   flex flex-col md:flex-row md:flex-wrap  bg-[#96A78D]">
       <div className=" md:h-fit  h-[50%] pl-4 flex flex-col md:w-1/2 w-full md:gap-6 gap-4">
         <div className="flex md:gap-6 items-center pl-4 md:pl-0 gap-2 w-full ">
-          <img className="md:w-26 md:h-26 h-11 w-11" src={logo} alt="school logo" />
+          <img className="md:w-26 md:h-26 h-11 w-11" src="src/assets/logo.png" alt="school logo" />
           <div>
             <h1 className="font-bold md:text-[39px] text-[17px] ">Glorious</h1>
             <h4 className="font-bold text-nowrap md:text-[21px] text-[13px] ">
