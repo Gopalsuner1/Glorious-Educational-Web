@@ -1,4 +1,4 @@
-import { logo } from "../assets/logo.png";
+import logo from '../assets/logo.png';
 import { FiPhoneCall } from "react-icons/fi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
