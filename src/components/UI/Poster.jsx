@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../styles/Home.module.css'
+import style from '../../styles/Home.module.css'
 const Poster = () => {
   return (
     <div className={` md:w-[95%] md:p-[50px] shadow-lg shadow-black items-center  rounded-2xl overflow-hidden w-[95%] md:h-[560px] h-[250px] ${style.bgdiv}  flex flex-col justify-center `}>
@@ -10,8 +10,7 @@ const Poster = () => {
 Our students consistently shine in academics and sports, earning accolades and recognition at various levels. Behind their success is a team of passionate educators, committed administrative staff, and a strong support system of parents and well-wishers who believe in our vision.
 
 At Glorious, we don’t just teach — we inspire, empower, and shape the leaders of tomorrow.</p>
-                     <a className=' text-black w-fit pl-1 pr-1 pt-1 pb-1 h-8 text-[11px] md:text-[14px]  rounded font-bold bg-[#34656D] text-center transition-all hover:bg-white hover:text-black' href="">Learn More..</a>
-                  </div>
+                         </div>
     </div>
   )
 }
