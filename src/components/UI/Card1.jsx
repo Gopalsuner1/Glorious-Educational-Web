@@ -1,6 +1,8 @@
 import React from 'react'
 import style from '../../styles/Home.module.css'
 const Card1 = ({image}) => {
+  console.log("card");
+  
   return (
     <div className='w-[87%] bg-[#C5C7BC] md:h-fit h-fit flex flex-col m-auto md:flex-row gap-1 p-3 rounded-2xl border  '>
         <div className='flex flex-col gap-3.5 '>

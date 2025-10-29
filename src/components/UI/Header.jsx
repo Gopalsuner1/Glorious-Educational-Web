@@ -6,14 +6,35 @@ import { FaFacebook } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import styles from "../../styles/Header.module.css";
+import { useEffect, useState } from "react";
+const Header = () => {
+  console.log("helder");
+  const [hideHeader, setHideHeader] = useState(false);
+  let lastScrollTop = 0;
 
-const Header = ({isHidden}) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
 
+      if (currentScroll > lastScrollTop && currentScroll > 90) {
+        setHideHeader(true); // scroll down → hide
+      } else {
+        setHideHeader(false); // scroll up → show
+      }
+
+      lastScrollTop = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div
-      className={`h-fit w-full z-50 bg-[#FBF3D1] shadow-xl fixed top-0 left-0 
+      className={`h-fit w-full z-50 bg-[#FBF3D1] shadow-[0px_8px_20px_-10px_rgba(0,_0,_0,_1)] fixed top-0 left-0 
       md:items-center flex md:flex-row flex-col gap-4 pb-2.5 pt-2 
-      transition-transform duration-500 ease-in-out  ${isHidden ? "-translate-y-full" : "translate-y-0"}
+      transition-transform duration-500 ease-in-out  ${
+        hideHeader ? "-translate-y-full" : "translate-y-0"
+      }
       `}
     >
       {/* Left Section (Logo + Title) */}

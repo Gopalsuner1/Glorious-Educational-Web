@@ -1,6 +1,8 @@
 import React from 'react'
 import style from '../../styles/Home.module.css'
 const Poster = () => {
+  console.log("poster");
+  
   return (
     <div className={` md:w-[95%] md:p-[50px] shadow-lg shadow-black items-center  rounded-2xl overflow-hidden w-[95%] md:h-[560px] h-[250px] ${style.bgdiv}  flex flex-col justify-center `}>
                   <div className={` flex md:gap-6 gap-2 overflow-hidden flex-col w-full md:p-14 justify-center items-center  ${style.anim1}`}>

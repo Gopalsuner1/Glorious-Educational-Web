@@ -3,6 +3,8 @@ import { FiPhoneCall } from "react-icons/fi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 const Footer = () => {
+  console.log("footer");
+  
   return (
     <div className="w-full h-fit  gap-5 md:gap-0 md:pl-[90px] md:pr-[90px] pt-3   flex flex-col md:flex-row md:flex-wrap  bg-[#96A78D]">
       <div className=" md:h-fit  h-[50%] pl-4 flex flex-col md:w-1/2 w-full md:gap-6 gap-4">
@@ -30,8 +32,8 @@ const Footer = () => {
         <div className="flex items-center pl-5 gap-6 ">
           <IoMdMail className="md:text-[29px] text-[20px] " />
          <div className="flex font-medium md:text-[15px] flex-col underline">
-           <a href="">info@gloriousacademyindore.com</a>
-           <a href="">gloriouseducational304@gmail.com</a>
+           <a href="mailto:info@gloriousacademyindore.com">info@gloriousacademyindore.com</a>
+           <a href="mailto:gloriouseducational304@gmail.com">gloriouseducational304@gmail.com</a>
          </div>
           {/* <h1 className=" text-[15px]"> |</h1> */}
         </div>
