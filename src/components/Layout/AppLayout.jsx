@@ -7,13 +7,9 @@ const AppLayout = () => {
   console.log("laylout");
 
   return (
-    <div className="bg-[#FBF3D1] min-h-screen ">
+    <div className="min-h-screen ">
       <Header />
-      {/* ✅ Add padding to prevent content from going under header */}
-      <div className="pt-20">
-        <Outlet />
-      </div>
-
+      <div className="pt-26 md:pt-19"> <Outlet /></div>
       <Footer />
     </div>
   );

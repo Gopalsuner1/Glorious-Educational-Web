@@ -1,10 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Playwrite+DE+Grund:wght@100..400&family=Rye&display=swap');
+@import "tailwindcss";
 
+@theme {
+  --font-Rye: "Rye", serif;
+  --font-PlayWrite: "Playwrite DE Grund", "cursive";
+} 
 
+@layer components {
+.header{
+  @apply h-fit w-full z-50 bg-[#FFFF] rounded shadow-[0px_8px_20px_-10px_rgba(0,_0,_0,_1)] fixed top-0 left-0 flex  flex-col gap-4 pb-2.5 pt-2 transition-transform duration-500 ease-in-out ;
+  @apply  md:items-center md:flex-row 
+}
+ .container1{
+  @apply w-full flex justify-center items-center gap-5 ;
+  @apply md:w-[40%] md:justify-start md:pl-9
+ }
+ .h1{
+      @apply text-black text-[20px] md:text-[18px];
+      font-family: var(--font-Rye);
+  }
+.container2{
+ @apply w-full flex items-center justify-between ;
+ @apply  md:w-[60%] 
+}
+
+.container2ul{
+ @apply  md:w-[50%] w-[65%] text-[11px] flex items-center justify-around font-bold ;
+           font-family: var(--font-PlayWrite);        
+}
+.container2ul2{
+ @apply flex items-center text-[14px] justify-around w-[35%]  pl-[10px] pr-[10px] text-2xl ;  
+ @apply md:w-[45%] md:text-[20px]  md:pl-[70px] md:pr-[70px]    
+}
+
+}
 .line::after{
    transition: all 0.5s ease-in-out;
    background: #000; 
-
    width: 0;
    position: absolute;
    content: '';
@@ -19,16 +51,6 @@
   font-family: "Amarante", serif;
   font-weight: 600;
   font-style: bold;
-}
-.f2{
-  font-family: "Rye", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.f3{
-  font-family: "Boogaloo", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 .f4{
   font-family: "Playwrite DE Grund", cursive;
