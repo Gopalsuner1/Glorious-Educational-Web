@@ -16,3 +16,9 @@ body {
   -ms-overflow-style: none;
   background-color: white;
 }
+
+.f4{
+  font-family: "Playwrite DE Grund", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}

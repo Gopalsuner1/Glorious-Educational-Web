@@ -9,7 +9,7 @@ const AppLayout = () => {
   return (
     <div className="min-h-screen ">
       <Header />
-      <div className="pt-26 md:pt-19"> <Outlet /></div>
+      <div className="pt-19"> <Outlet /></div>
       <Footer />
     </div>
   );

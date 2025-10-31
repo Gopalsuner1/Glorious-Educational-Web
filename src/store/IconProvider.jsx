@@ -6,7 +6,7 @@ import { FaFacebook } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoMdMail } from "react-icons/io";
-
+import { IoReorderThreeOutline } from "react-icons/io5";
  const IconProvider = ({id,style}) => {
   return (
     <>
@@ -17,6 +17,7 @@ import { IoMdMail } from "react-icons/io";
          {id === "youtube" && <BsYoutube className={style}/>}
          {id === "phone" && <FiPhoneCall className={style}/>}
          {id === "email" && <IoMdMail className={style}/>}
+         {id === "threeline" && <IoReorderThreeOutline className={style}/>}
     </>
   )
 }

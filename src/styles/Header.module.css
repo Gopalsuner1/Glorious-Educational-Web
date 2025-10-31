@@ -8,29 +8,26 @@
 
 @layer components {
 .header{
-  @apply h-fit w-full z-50 bg-[#FFFF] rounded shadow-[0px_8px_20px_-10px_rgba(0,_0,_0,_1)] fixed top-0 left-0 flex  flex-col gap-4 pb-2.5 pt-2 transition-transform duration-500 ease-in-out ;
-  @apply  md:items-center md:flex-row 
+  @apply min-w-full pl-2  pr-2 z-50 bg-[#FFFF] rounded shadow-[0px_8px_20px_-10px_rgba(0,_0,_0,_1)] items-center justify-between fixed top-0 left-0 flex  pb-2 pt-2 transition-transform duration-500 ease-in-out ;
 }
  .container1{
-  @apply w-full flex justify-center items-center gap-5 ;
-  @apply md:w-[40%] md:justify-start md:pl-9
+  @apply max-w-fit grow  flex justify-center items-center gap-2 ;
+  @apply  md:justify-start md:pl-9
  }
  .h1{
-      @apply text-black text-[20px] md:text-[18px];
+      @apply text-black text-[11px] md:text-[18px];
       font-family: var(--font-Rye);
   }
 .container2{
- @apply w-full flex items-center justify-between ;
- @apply  md:w-[60%] 
+ @apply max-w-fit flex grow  items-center ;
 }
 
 .container2ul{
- @apply  md:w-[50%] w-[65%] text-[11px] flex items-center justify-around font-bold ;
+ @apply   text-[11px]  flex items-center justify-around space-x-5 font-bold ;
            font-family: var(--font-PlayWrite);        
 }
 .container2ul2{
- @apply flex items-center text-[14px] justify-around w-[35%]  pl-[10px] pr-[10px] text-2xl ;  
- @apply md:w-[45%] md:text-[20px]  md:pl-[70px] md:pr-[70px]    
+ @apply  md:flex md:grow md:text-[20px]  space-x-5 md:pl-[70px] md:pr-[70px]    
 }
 
 }
@@ -56,4 +53,18 @@
   font-family: "Playwrite DE Grund", cursive;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+
+.slider{
+  animation-timing-function: ease-in-out;
+  animation-name: slideranim;
+  animation-duration: 0.3s;
+
+}
+
+@keyframes slideranim {
+  from {transform: translateX(100%);}
+  to {transform: translateX(0);}
+  
 }

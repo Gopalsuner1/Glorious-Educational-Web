@@ -3,10 +3,12 @@ import { href, Link } from "react-router-dom";
 import styles from "../../styles/Header.module.css";
 import { useEffect, useState } from "react";
 import IconProvider from "../../store/IconProvider";
+import Slidbar from "../UI/Slidbar.jsx";
 
 const Header = () => {
   console.log("helder");
   const [hideHeader, setHideHeader] = useState(false);
+  const [slide , setSlide] = useState(false);
   let lastScrollTop = 0;
 
   const linkss = [
@@ -19,7 +21,7 @@ const Header = () => {
       path: "/contact",
     },
     {
-      name: "Abount Us",
+      name: "About Us",
       path: "/about",
     },
     {
@@ -72,37 +74,42 @@ const Header = () => {
   }, []);
 
   return (
-    <div
-      className={`${styles.header} ${
-        hideHeader ? "-translate-y-full" : "translate-y-0"
-      }`}
-    >
+    <nav className={`${styles.header} ${hideHeader ? "-translate-y-full" : "translate-y-0" }`}>
+      { slide && <Slidbar linkss={linkss} icons={icons} hideHeader={hideHeader} style={styles.slider}/>}
       <div className={styles.container1}>
-        <img src={logo} className="w-9" alt="Glorious Academy logo" />
+        <img src={logo} className="w-8" alt="Glorious Academy logo" />
         <h1 className={` ${styles.h1}`}>Glorious Educational Academy</h1>
       </div>
       <div className={styles.container2}>
-        <ul className={styles.container2ul}>
-          {linkss.map((e) => (
+        <div className="md:flex hidden">
+          <ul className={styles.container2ul}>
+          {linkss.map(({name,path}) => (
             <Link
-              key={e.name}
+              key={name}
               className={`relative ${styles.line}`}
-              to={e.path}
-            >
-              {e.name}
+              to={path}
+            >{name}
             </Link>
           ))}
         </ul>
 
-        <div className={styles.container2ul2}>
-          {icons.map((e) => (
-            <a key={e.id} target="_blank" href={e.lin}>
-              <IconProvider id={e.id} />
+        <ul className={styles.container2ul2}>
+          {icons.map(({id,lin}) => (
+            <a key={id} target="_blank" href={lin}>
+              <IconProvider id={id} 
+              
+              />
             </a>
           ))}
+        </ul>
         </div>
-      </div>
-    </div>
+          <div className=" flex space-x-3">
+            <button className=" bg-[#FFE797]  border rounded-xs font-bold pl-2.5 pr-2.5 text-black text-[14px] md:text-[16px]">Login</button>
+             <button onClick={() => {if(slide){setSlide(false)}else{setSlide(true)}}
+             } className={`md:hidden transition-all duration-300 ease-in-out  transform ${slide ? ' border rotate-90 ':'rotate-0'}`}><IconProvider id={"threeline"} style={'text-[27px]'}/></button>
+          </div> 
+        </div>
+    </nav>
   );
 };
 
