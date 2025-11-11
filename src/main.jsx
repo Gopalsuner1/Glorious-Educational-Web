@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import Lenis from "@studio-freight/lenis";
+import { Provider } from "react-redux";
+import { store } from "./store/store.js";
 
 const lenis = new Lenis({
   duration: 1.2,
@@ -18,6 +20,8 @@ requestAnimationFrame(raf);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </StrictMode>
 );
