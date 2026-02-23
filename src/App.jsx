@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AppLayout from "./components/Layout/AppLayout";
 import Error from "./pages/Error";
+import Dashboard from "./pages/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path : "/test",
+        element: <Dashboard/>
+      }
     ],
   },
 ]);
