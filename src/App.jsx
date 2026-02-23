@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import AppLayout from "./components/Layout/AppLayout";
 import Error from "./pages/Error";
 import Dashboard from "./pages/Dashboard";
+import StudentProfile from "./pages/StudentProfile";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
       {
         path : "/test",
         element: <Dashboard/>
-      }
+      },
+      { 
+        path: "/studentprofile" ,
+        element: <StudentProfile />
+        }
     ],
   },
 ]);

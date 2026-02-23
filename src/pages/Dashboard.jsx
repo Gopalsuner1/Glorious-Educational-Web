@@ -9,14 +9,34 @@ import {
 import { useState } from "react";
 import Card2 from "../components/UI/Card2";
 import StudentCard from "../components/UI/StudentCard";
+import { searchStudent } from "../api/studentapi";
 
 const Dashboard = () => {
-  const [scholarType, setScholarType] = useState("regular");
-  const [searchBy, setSearchBy] = useState("first");
+  const [scholarType, setScholarType] = useState("REGULAR");
+  const [searchBy, setSearchBy] = useState("101");
   const [searchText, setSearchText] = useState("");
+  const [students, setStudents] = useState([]);
 
-  // temporary dummy results
-  const students = [1, 2, 3, 4, 5, 6,7,8,9,10,11,12,13,14,15];
+  const handleSearch = async (e) => {
+    const value = e.target.value;
+    setSearchText(value);
+
+    if (value.trim().length < 2) return; // avoid useless calls
+
+    const data = {
+      scholar_status: scholarType,
+      search_id: searchBy,
+      session_id: "2025",
+      value: value,
+    };
+
+    try {
+      const res = await searchStudent(data);
+      setStudents(res.data); // adjust if API response differs
+    } catch (error) {
+      console.error("Search failed", error);
+    }
+  };
 
   return (
     <div className="min-h-screen w-full bg-gray-50">
@@ -30,7 +50,7 @@ const Dashboard = () => {
           <p className="text-gray-600">School • Indore</p>
         </div>
 
-        {/* Stats Cards */}
+        {/* Stats */}
         <div className="flex gap-4 flex-wrap">
           <Card2 header="Total Students" value="50" />
           <Card2 header="Total Teachers" value="10" />
@@ -39,7 +59,6 @@ const Dashboard = () => {
         {/* Search Section */}
         <div className="border bg-white p-4 rounded-lg flex flex-col gap-4">
 
-          {/* Filters */}
           <div className="flex gap-8 flex-wrap">
 
             {/* Scholar Type */}
@@ -50,8 +69,8 @@ const Dashboard = () => {
                 value={scholarType}
                 onChange={(e) => setScholarType(e.target.value)}
               >
-                <FormControlLabel value="regular" control={<Radio />} label="Regular" />
-                <FormControlLabel value="ex" control={<Radio />} label="Ex" />
+                <FormControlLabel value="REGULAR" control={<Radio />} label="Regular" />
+                <FormControlLabel value="EX" control={<Radio />} label="Ex" />
               </RadioGroup>
             </FormControl>
 
@@ -63,11 +82,11 @@ const Dashboard = () => {
                 value={searchBy}
                 onChange={(e) => setSearchBy(e.target.value)}
               >
-                <FormControlLabel value="first" control={<Radio />} label="First Name" />
-                <FormControlLabel value="last" control={<Radio />} label="Last Name" />
-                <FormControlLabel value="father" control={<Radio />} label="Father" />
-                <FormControlLabel value="mother" control={<Radio />} label="Mother" />
-                <FormControlLabel value="scholar" control={<Radio />} label="Scholar No" />
+                <FormControlLabel value="101" control={<Radio />} label="First Name" />
+                <FormControlLabel value="102" control={<Radio />} label="Last Name" />
+                <FormControlLabel value="103" control={<Radio />} label="Father" />
+                <FormControlLabel value="104" control={<Radio />} label="Mother" />
+                <FormControlLabel value="105" control={<Radio />} label="Scholar No" />
               </RadioGroup>
             </FormControl>
           </div>
@@ -76,13 +95,13 @@ const Dashboard = () => {
           <TextField
             size="small"
             fullWidth
-            label={`Search by ${searchBy}`}
-            placeholder={`Enter ${searchBy}`}
+            label="Search"
+            placeholder="Enter keyword"
             value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
+            onChange={handleSearch}
           />
 
-          {/* Search Results */}
+          {/* Results */}
           <div>
             <h2 className="font-semibold mb-3">Search Results</h2>
 
@@ -93,13 +112,17 @@ const Dashboard = () => {
               md:grid-cols-3
               lg:grid-cols-4
             ">
-              {students.map((_, index) => (
-                <StudentCard key={index} />
-              ))}
+              {students.length === 0 ? (
+                <p className="text-gray-500">No students found</p>
+              ) : (
+                students.map((student, index) => (
+                  <StudentCard key={student.id || index} data={student} />
+                ))
+              )}
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
   );
